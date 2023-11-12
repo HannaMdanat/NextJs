@@ -15,10 +15,15 @@ interface List {
     image: '',
 }
 
-const SlideBanner = ({ categories }: {categories: Category[]}) => {
+interface SlideBannerProps {
+    categories: Category[];
+    dictionary: { title: string };
+}
+
+const SlideBanner = ({ categories, dictionary }: SlideBannerProps) => {
     return (
         <>
-            <p className={styles.slideTitle}>Slide Banner :-</p>
+            <p className={styles.slideTitle}>{dictionary.title}</p>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
