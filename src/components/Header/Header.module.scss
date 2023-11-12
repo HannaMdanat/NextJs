@@ -1,0 +1,47 @@
+.navBarContainer {
+    align-items: center;
+    background-color: #776B5D;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    padding: 0 50px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.leftContent {
+    align-items: center;
+    background-color: #776B5D;
+    cursor: pointer;
+    display: flex;
+
+    span {
+        background-color: #776B5D;
+        color: #F3EEEA;
+    }
+}
+
+.rightContent {
+    background-color: #776B5D;
+}
+
+.logoIcon {
+    background-color: #776B5D;
+    height: 50px;
+    width: 60px;
+}
+
+.logInBtn {
+    background-color: #F3EEEA;
+    border-radius: 8px;
+    border: none;
+    color: #776B5D;
+    cursor: pointer;
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+
+    &:hover {
+        border: 1px solid #776B5D;
+    }
+}

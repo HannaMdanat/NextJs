@@ -1,0 +1,15 @@
+.slideTitle {
+    font: 700 22px/24px 'Work Sans';
+    color: #776B5D;
+    margin: 0 0 10px 40px;
+}
+
+.swiperPagination {
+    height: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+
+    :global(.swiper-pagination) {
+        bottom: 0;
+    }
+}
