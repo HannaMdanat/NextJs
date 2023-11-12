@@ -9,12 +9,6 @@ import { Category } from '@/utils/fetchCategoryDate';
 import styles from './SlideBanner.module.scss'
 import Image from 'next/image'
 
-interface List {
-    id: number;
-    name: string;
-    image: '',
-}
-
 interface SlideBannerProps {
     categories: Category[];
     dictionary: { title: string };

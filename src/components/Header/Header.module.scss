@@ -1,19 +1,20 @@
 .navBarContainer {
     align-items: center;
     background-color: #776B5D;
+    border-bottom: 1px solid black;
+    cursor: pointer;
     display: flex;
     height: 100px;
     justify-content: space-between;
     padding: 0 50px;
     width: 100%;
-    border-bottom: 1px solid black;
 }
 
 .logoContent {
     align-items: center;
     background-color: #776B5D;
-    cursor: pointer;
     display: flex;
+    text-decoration: none;
 
     span {
         background-color: #776B5D;
@@ -47,4 +48,9 @@
     align-items: center;
     display: flex;
     gap: 10px;
+}
+
+.userName {
+    background-color: #776B5D;
+    color: #F3EEEA;
 }
