@@ -9,13 +9,17 @@ import { Category } from '@/utils/fetchCategoryDate';
 import styles from './SlideBanner.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import useGetCategories from '@/hooks/useGetCategories'
 
 interface SlideBannerProps {
     categories: Category[];
     dictionary: { title: string };
 }
 
-const SlideBanner = ({ categories, dictionary }: SlideBannerProps) => {
+const SlideBanner = ({ dictionary }: SlideBannerProps) => {
+    const { categories } = useGetCategories();
+    console.log(categories)
+
     return (
         <>
             <p className={styles.slideTitle}>{dictionary.title}</p>
@@ -28,7 +32,7 @@ const SlideBanner = ({ categories, dictionary }: SlideBannerProps) => {
                 modules={[Pagination]}
                 className={styles.swiperPagination}
             >
-                <div className={styles.categorySlide}>{categories?.map((category, index) => (
+                <div className={styles.categorySlide}>{categories?.map((category: object, index: object) => (
                     <SwiperSlide key={`slide-${index}`}>
                         <Link href='/products'>
                             <p className={styles.slideCategory}>{category.name}</p>

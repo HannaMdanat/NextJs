@@ -20,8 +20,7 @@ const zoom = 7;
 const Map = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyDsHLVMf9I5_PT8xZ4IQZs9Ieigk-qtERU',
-    // googleMapsApiKey: 'AIzaSyAlak1M86TXWOeI0Wlfv5IOD2xUcukXgsw',
+    googleMapsApiKey: '',
   });
   // eslint-disable-next-line no-unused-vars
   const [map, setMap] = useState(null);

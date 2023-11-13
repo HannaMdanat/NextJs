@@ -7,9 +7,16 @@ import styles from './ProductsList.module.scss'
 import {usePathname} from 'next/navigation'
 import Link from 'next/link'
 
-const ProductsList = () => {
-  const pathname = usePathname()
- const { data, loading, loadInitialData, loadNextPage } = useFirebasePagination('products', 5);
+interface ProductsListProps {
+    dictionary: {
+      title: string;
+      cat: string
+    };
+}
+
+const ProductsList = ({ dictionary }: ProductsListProps) => {
+    const pathname = usePathname()
+    const { data, loading, loadInitialData, loadNextPage } = useFirebasePagination('products', 5);
 
   useEffect(() => {
     loadInitialData();
@@ -33,8 +40,8 @@ const ProductsList = () => {
         {data?.map((category) => (
             <Link href={`/products/${category.id}/details`} className={styles.productContent} key={category?.id}>
                 <Image src={category?.image} width='100' height='100' alt='category image'/>
-                <p className={styles.productCategory}>Product Name: {category?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
-                <p className={styles.productName}>Category Title: {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
+                <p className={styles.productCategory}>{dictionary.cat} {category?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
+                <p className={styles.productName}>{dictionary.title} {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
             </Link>
         ))}
     </div>

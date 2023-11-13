@@ -5,7 +5,10 @@
       },
       "slide": {
         "title": "Featured Categories:"
+      },
+      "list": {
+        "title": "Product name:",
+        "cat": "Category name: "
       }
     }
   }
-  
