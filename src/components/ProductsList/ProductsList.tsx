@@ -9,8 +9,9 @@ import Link from 'next/link'
 
 interface ProductsListProps {
     dictionary: {
-      title: string;
+      title: string
       cat: string
+      section: string
     };
 }
 
@@ -37,11 +38,12 @@ const ProductsList = ({ dictionary }: ProductsListProps) => {
 
   return (
     <div className={styles.productsContainer}>
+        <p className={styles.productSection}>{dictionary.section}</p>
         {data?.map((category) => (
             <Link href={`/products/${category.id}/details`} className={styles.productContent} key={category?.id}>
                 <Image src={category?.image} width='100' height='100' alt='category image'/>
                 <p className={styles.productCategory}>{dictionary.cat} {category?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
-                <p className={styles.productName}>{dictionary.title} {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
+                <p className={styles.productCategory}>{dictionary.title} {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
             </Link>
         ))}
     </div>

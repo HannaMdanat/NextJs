@@ -1,4 +1,3 @@
-import styles from './Products.module.scss'
 import ProductList from '@/components/ProductsList/ProductsList'
 import { getDictionary } from '../../../../get-dictionary'
 
@@ -8,7 +7,6 @@ const page = async ({ params }: { params: { lang: 'en' | 'ar' }}) => {
 
   return (
     <div>
-        <p className={styles.productsSection}>Products</p>
         <ProductList dictionary={homePage.list}/>
     </div>
   )

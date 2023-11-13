@@ -1,14 +1,16 @@
 import React from 'react'
 import ProductDetails from '@/components/ProductDetails/ProductDetails'
-import Link from 'next/link'
-import styles from './details.module.scss'
+import { getDictionary } from '../../../../../../get-dictionary'
 
-const Details = ({params}: {params: any}) => {
+
+const Details = async  ({params}: {params: any}) => {
   const {slug} = params;
+  const dictionary = await getDictionary(params.lang);
+  const { homePage } = dictionary;
+
   return (
     <>
-      <Link href='/products' className={styles.backTo}>Back</Link>
-      <ProductDetails id={+slug} />
+      <ProductDetails dictionary={homePage.direction} id={+slug} />
     </>
   )
 }

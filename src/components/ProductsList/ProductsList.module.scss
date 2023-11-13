@@ -7,6 +7,18 @@
     border-bottom: 3px solid #776B5D;
 }
 
+.productSection {
+    font: 700 22px/24px 'Work Sans';
+    color: #776B5D;
+    margin: 20px 50px;
+}
+
+.productCategory {
+    font: 700 16px/18px 'Work Sans';
+    color: #776B5D;
+    margin: 20px 50px;
+}
+
 @media (max-width: 480px) {
     .productContent {
         flex-direction: column;

@@ -8,11 +8,17 @@
       },
       "list": {
         "title": "Product name:",
-        "cat": "Category name: "
+        "cat": "Category name: ",
+        "section": "Products"
       },
       "sign": {
         "logIn": "Log In",
         "logOut": "Log Out"
+      },
+      "direction": {
+        "title": "Back",
+        "product": "Product details"
+
       }
     }
   }

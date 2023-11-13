@@ -6,8 +6,16 @@ import useFirebaseDataByFieldValue from '@/hooks/useFetchById';
 import styles from './ProductDetails.module.scss';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link'
 
-const ProductDetails = ({ id }: { id: number }) => {
+interface ProductDetailsProps {
+    dictionary: {
+      title: string;
+      product: string
+    };
+}
+
+const ProductDetails = ({ dictionary, id }: ProductDetailsProps & { id: number }) => {
   const { data } = useFirebaseDataByFieldValue('products', 'id', id);
   const pathname = usePathname();
 
@@ -29,7 +37,8 @@ const ProductDetails = ({ id }: { id: number }) => {
       </Head>
 
       <div>
-        <p className={styles.productTitle}>Product Details</p>
+        <Link href='/products' className={styles.productDetail}>{dictionary.title}</Link>
+        <p className={styles.productTitle}>{dictionary.product}</p>
         <div className={styles.productCard}>
           <Image className={styles.productImage} src={data?.[0]?.image} objectFit="cover" height="336" width="336" alt="Product Image" />
           <div className={styles.productDetails}>
