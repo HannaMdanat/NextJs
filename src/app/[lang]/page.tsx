@@ -10,6 +10,9 @@ const Page = async ({ params }: { params: { lang: 'en' | 'ar' }}) => {
 
   return (
     <div>
+      {/* <div className={styles.mapContainer}>
+        <GoogleMap/>
+      </div> */}
       <CategoryList categories={data!} dictionary={homePage.category}/>
       <SlideBanner categories={data!} dictionary={homePage.slide} />
     </div>

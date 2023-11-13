@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import styles from './CategoryList.module.scss'
 import { Category } from '@/utils/fetchCategoryDate'
@@ -8,7 +10,7 @@ interface CategoryListProps {
     dictionary: { title: string };
 }
 
-const CategoryList = async ({ categories, dictionary }: CategoryListProps) => {
+const CategoryList = ({ categories, dictionary }: CategoryListProps) => {
     return (
         <>
             <p className={styles.categoryListTitle}>{dictionary.title}</p>

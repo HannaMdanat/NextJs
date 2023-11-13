@@ -44,3 +44,25 @@
     color: #776B5D;
     margin: 30px 40px 10px 40px;
 }
+
+@media (max-width: 1080px) {
+    .cardContent {
+        flex-direction: column;
+
+        img {
+            margin: 0 0 10px 0;
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .cardContent {
+        width: 47%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardContent {
+        width: 100%;
+    }
+}

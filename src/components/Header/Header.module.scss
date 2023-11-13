@@ -54,3 +54,24 @@
     background-color: #776B5D;
     color: #F3EEEA;
 }
+
+@media (max-width: 480px) {
+    .navBarContainer {
+        padding: 0 10px;
+    }
+
+    .userName {
+        display: none;
+    }
+
+    .logoContent{
+        span {
+            display: none;
+        }
+    }
+
+    .logInBtn {
+        width: 75px;
+        height: 30px;
+    }
+}
