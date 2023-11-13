@@ -6,3 +6,9 @@
     align-items: center;
     border-bottom: 3px solid #776B5D;
 }
+
+@media (max-width: 480px) {
+    .productContent {
+        flex-direction: column;
+    }
+}

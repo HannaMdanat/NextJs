@@ -13,17 +13,18 @@
     padding: 50px;
 }
 
-.productCategory {
-    color: #776B5D;
-    margin: 0 40px 10px 40px;
-}
-
-.productName {
-    color: #776B5D;
-    margin: 0 40px 10px 40px;
-}
-
 .productDetail {
     color: #776B5D;
     margin: 0 40px 10px 40px;
+}
+
+@media (max-width: 480px) {
+    .productCard {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .productImage {
+        display: none;
+    }
 }

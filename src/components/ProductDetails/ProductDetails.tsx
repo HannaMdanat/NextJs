@@ -13,7 +13,7 @@ const ProductDetails = ({ id }: { id: number }) => {
 
   const title = data?.[0]?.name?.[pathname.includes('/en/') ? 'english' : 'arabic'] || 'Product Details';
   const description = data?.[0]?.info?.[pathname.includes('/en/') ? 'english' : 'arabic'] || 'Product details and information.';
-  const imageUrl = data?.[0]?.image || '/default-image.jpg'; // Replace with a default image URL.
+  const imageUrl = data?.[0]?.image || '/default-image.jpg';
 
   return (
     <>
@@ -33,8 +33,8 @@ const ProductDetails = ({ id }: { id: number }) => {
         <div className={styles.productCard}>
           <Image className={styles.productImage} src={data?.[0]?.image} objectFit="cover" height="336" width="336" alt="Product Image" />
           <div className={styles.productDetails}>
-            <h1 className={styles.productCategory}>{data?.[0]?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</h1>
-            <h2 className={styles.productName}>{data?.[0]?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</h2>
+            <h1 className={styles.productDetail}>{data?.[0]?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</h1>
+            <h2 className={styles.productDetail}>{data?.[0]?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</h2>
             <h3 className={styles.productDetail}>{data?.[0]?.info?.[pathname.includes('/en/') ? 'english' : 'arabic']}</h3>
             <h3 className={styles.productDetail}>${data?.[0]?.price}</h3>
           </div>

@@ -9,6 +9,10 @@
       "list": {
         "title": "Product name:",
         "cat": "Category name: "
+      },
+      "sign": {
+        "logIn": "Log In",
+        "logOut": "Log Out"
       }
     }
   }
