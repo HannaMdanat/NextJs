@@ -1,0 +1,30 @@
+.switcher {
+    background-color: #776B5D;
+    display: flex;
+    gap: 8px;
+    margin-inline: 20px;
+}
+
+.lang {
+    align-items: center;
+    background-color: #F3EEEA;
+    border-radius: 50%;
+    color: #776B5D;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    text-decoration: none;
+    width: 30px;
+
+    &:hover {
+        border: 1px solid #776B5D;
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .switcher {
+        margin: 0;
+    }
+}

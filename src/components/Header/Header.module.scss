@@ -1,0 +1,76 @@
+.navBarContainer {
+    align-items: center;
+    background-color: #776B5D;
+    border-bottom: 1px solid black;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    padding: 0 50px;
+    width: 100%;
+}
+
+.logoContent {
+    align-items: center;
+    background-color: #776B5D;
+    display: flex;
+    text-decoration: none;
+
+    span {
+        background-color: #776B5D;
+        color: #F3EEEA;
+    }
+}
+
+.logoIcon {
+    background-color: #776B5D;
+    height: 50px;
+    width: 60px;
+}
+
+.logInBtn {
+    background-color: #F3EEEA;
+    border-radius: 8px;
+    border: none;
+    color: #776B5D;
+    cursor: pointer;
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+
+    &:hover {
+        border: 1px solid #776B5D;
+    }
+}
+
+.interactiveContent {
+    background-color: #776B5D;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.userName {
+    background-color: #776B5D;
+    color: #F3EEEA;
+}
+
+@media (max-width: 480px) {
+    .navBarContainer {
+        padding: 0 10px;
+    }
+
+    .userName {
+        display: none;
+    }
+
+    .logoContent{
+        span {
+            display: none;
+        }
+    }
+
+    .logInBtn {
+        width: 75px;
+        height: 30px;
+    }
+}

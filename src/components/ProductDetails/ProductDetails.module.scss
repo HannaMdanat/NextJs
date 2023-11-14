@@ -1,0 +1,30 @@
+.productTitle {
+    font: 700 22px/24px 'Work Sans';
+    color: #776B5D;
+    margin: 30px 40px 10px 40px;
+}
+
+.productCard {
+    display: flex;
+    padding: 40px 75px;
+}
+
+.productDetails {
+    padding: 50px;
+}
+
+.productDetail {
+    color: #776B5D;
+    margin: 0 40px 10px 40px;
+}
+
+@media (max-width: 480px) {
+    .productCard {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .productImage {
+        display: none;
+    }
+}
