@@ -1,7 +1,7 @@
 import React from 'react'
-import { getAllProductData } from '@/utils/fetchFirebaseData'
 import styles from './page.module.scss'
 import { DeleteProduct } from '@/components/DeleteProduct'
+import { getAllProductData } from '@/utils/fetchFireBaseData'
 import { Link } from '@/components/Link';
 
 const page = async ({ params }: { params: { lang: 'en' | 'ar' }}) => {

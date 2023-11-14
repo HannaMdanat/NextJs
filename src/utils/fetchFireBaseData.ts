@@ -34,29 +34,3 @@ if (!admin.apps.length) {
       throw error; // You might want to handle this error in the calling code
     }
   };
-
-
-
-// import { ref, query, onValue, limitToFirst, orderByChild, DataSnapshot, Query, startAfter } from 'firebase/database';
-// import { database } from '@/utils/firebase'
-
-// type FirebaseData = Record<string, any>;
-
-// const processSnapshot = (snapshot: DataSnapshot) => {
-//     const items: FirebaseData[] = [];
-//     snapshot.forEach((childSnapshot) => {
-//       items.push(childSnapshot.val());
-//     });
-//     return items;
-//   };
-
-//   const loadInitialData = (products: string) => {
-//     const dataRef = ref(database, products);
-//     const queryRef: Query = query(dataRef, orderByChild('id'));
-
-//     onValue(queryRef, (snapshot) => {
-//       const items = processSnapshot(snapshot);
-//     }, (error) => {
-
-//     });
-//   };
