@@ -26,8 +26,9 @@ if (!admin.apps.length) {
 
       // Convert the object into an array if needed
       const productArray = Object.values(productData);
+      const productKeys = Object.keys(productData);
 
-      return productArray;
+      return productArray.map((data: any, index) => ({ ...data, id: productKeys[index] }));
     } catch (error) {
       console.error('Error getting product data:', error);
       throw error; // You might want to handle this error in the calling code
