@@ -1,10 +1,15 @@
 .productContent {
-    padding: 50px 40px;
-    width: 100%;
-    display: flex;
-    gap: 50px;
     align-items: center;
     border-bottom: 3px solid #776B5D;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 50px 40px;
+    width: 100%;
+
+    &:last-child {
+        border: none;
+    }
 }
 
 .productSection {
@@ -19,8 +24,18 @@
     margin: 20px 50px;
 }
 
+.productsItems {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 480px) {
     .productContent {
         flex-direction: column;
+    }
+
+    .productsItems {
+        flex-direction: column;
+        text-align: center;
     }
 }

@@ -22,3 +22,9 @@
         transform: scale(1.1);
     }
 }
+
+@media (max-width: 480px) {
+    .switcher {
+        margin: 0;
+    }
+}

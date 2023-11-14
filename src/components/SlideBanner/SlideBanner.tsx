@@ -5,20 +5,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import { Category } from '@/utils/fetchCategoryDate';
 import styles from './SlideBanner.module.scss'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from "@/components/Link";
 import useGetCategories from '@/hooks/useGetCategories'
 
 interface SlideBannerProps {
-    categories: Category[];
     dictionary: { title: string };
 }
 
 const SlideBanner = ({ dictionary }: SlideBannerProps) => {
     const { categories } = useGetCategories();
-    console.log(categories)
 
     return (
         <>
@@ -32,8 +29,8 @@ const SlideBanner = ({ dictionary }: SlideBannerProps) => {
                 modules={[Pagination]}
                 className={styles.swiperPagination}
             >
-                <div className={styles.categorySlide}>{categories?.map((category: object, index: object) => (
-                    <SwiperSlide key={`slide-${index}`}>
+                <div className={styles.categorySlide}>{categories?.map((category) => (
+                    <SwiperSlide key={category?.id}>
                         <Link href='/products'>
                             <p className={styles.slideCategory}>{category.name}</p>
                             <Image className={styles.slideImage} src={category.image} objectFit='cover' fill sizes='100%' alt='Slider Image'/>

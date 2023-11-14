@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    trailingSlash: true,
     images: {
         remotePatterns: [
           {
@@ -25,6 +26,11 @@ const nextConfig = {
           {
             protocol: 'https',
             hostname: 'via.placeholder.com',
+            port: ''
+          },
+          {
+            protocol: 'https',
+            hostname: 'i.ibb.co',
             port: ''
           }
         ],

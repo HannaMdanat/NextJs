@@ -2,18 +2,15 @@
 
 import Image from "next/image";
 import styles from "./CategoryList.module.scss";
-import { Category } from "@/utils/fetchCategoryDate";
-import Link from "next/link";
+import { Link } from "@/components/Link";
 import useGetCategories from "@/hooks/useGetCategories";
 
 interface CategoryListProps {
-  categories: Category[];
   dictionary: { title: string };
 }
 
 const CategoryList = ({ dictionary }: CategoryListProps) => {
   const { categories } = useGetCategories();
-  console.log(categories);
 
   return (
     <>
@@ -21,7 +18,7 @@ const CategoryList = ({ dictionary }: CategoryListProps) => {
       <div className={styles.cardsContainer}>
         {categories?.map((category: any) => (
           <Link
-            href="/products"
+            href='/products'
             className={styles.cardContent}
             key={category.id}
           >

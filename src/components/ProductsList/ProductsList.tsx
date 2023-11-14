@@ -5,13 +5,17 @@ import Image from 'next/image'
 import useFirebasePagination from '@/hooks/useFirebasePagination'
 import styles from './ProductsList.module.scss'
 import {usePathname} from 'next/navigation'
-import Link from 'next/link'
+import { Link } from "@/components/Link";
+import CardButtons from '@/components/CartButtons/CardButtons'
 
 interface ProductsListProps {
     dictionary: {
       title: string
       cat: string
       section: string
+      cart: string
+      add: string
+      remove: string
     };
 }
 
@@ -40,11 +44,14 @@ const ProductsList = ({ dictionary }: ProductsListProps) => {
     <div className={styles.productsContainer}>
         <p className={styles.productSection}>{dictionary.section}</p>
         {data?.map((category) => (
-            <Link href={`/products/${category.id}/details`} className={styles.productContent} key={category?.id}>
-                <Image src={category?.image} width='100' height='100' alt='category image'/>
-                <p className={styles.productCategory}>{dictionary.cat} {category?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
-                <p className={styles.productCategory}>{dictionary.title} {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
-            </Link>
+            <div className={styles.productContent} key={category?.id}>
+                <Link className={styles.productsItems} href={`/products/${category.id}/details`}>
+                    <Image src={category?.image} width='100' height='100' alt='category image'/>
+                    <p className={styles.productCategory}>{dictionary.cat} {category?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
+                    <p className={styles.productCategory}>{dictionary.title} {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
+                </Link>
+                <CardButtons dictionary={dictionary}/>
+            </div>
         ))}
     </div>
   )

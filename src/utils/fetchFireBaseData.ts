@@ -11,14 +11,51 @@ if (!admin.apps.length) {
     })
   }
 
-export const getProfileData = async (username: any) => {
-  const db = admin.firestore()
-  const profileCollection = db.collection('profile')
-  const profileDoc = await profileCollection.doc(username).get()
+  export const getAllProductData = async () => {
+    const db = admin.database();
+    const productsRef = db.ref('products');
 
-  if (!profileDoc.exists) {
-    return null
-  }
+    try {
+      const dataSnapshot = await productsRef.once('value');
+      const productData = dataSnapshot.val();
 
-  return profileDoc.data()
-}
+      if (!productData) {
+        // If the data is empty
+        return [];
+      }
+
+      // Convert the object into an array if needed
+      const productArray = Object.values(productData);
+
+      return productArray;
+    } catch (error) {
+      console.error('Error getting product data:', error);
+      throw error; // You might want to handle this error in the calling code
+    }
+  };
+
+
+
+// import { ref, query, onValue, limitToFirst, orderByChild, DataSnapshot, Query, startAfter } from 'firebase/database';
+// import { database } from '@/utils/firebase'
+
+// type FirebaseData = Record<string, any>;
+
+// const processSnapshot = (snapshot: DataSnapshot) => {
+//     const items: FirebaseData[] = [];
+//     snapshot.forEach((childSnapshot) => {
+//       items.push(childSnapshot.val());
+//     });
+//     return items;
+//   };
+
+//   const loadInitialData = (products: string) => {
+//     const dataRef = ref(database, products);
+//     const queryRef: Query = query(dataRef, orderByChild('id'));
+
+//     onValue(queryRef, (snapshot) => {
+//       const items = processSnapshot(snapshot);
+//     }, (error) => {
+
+//     });
+//   };

@@ -4,8 +4,10 @@ import React from 'react'
 import styles from './Header.module.scss'
 import Image from 'next/image'
 import { LangSwitcher } from '@/components/LangSwitcher'
-import Link from 'next/link'
+import { Link } from "@/components/Link";
 import { UserAuth } from '@/store/AuthContext'
+import Cart from '@/components/Cart/Cart'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const { user, googleSignIn, logOut } = UserAuth();
@@ -18,6 +20,7 @@ const Header = () => {
         </Link>
         <div className={styles.interactiveContent}>
             <LangSwitcher />
+            <Cart/>
             <p className={styles.userName}>{user?.displayName}</p>
             {user ? <button onClick={logOut} className={styles.logInBtn}>Log out</button> : <button onClick={googleSignIn} className={styles.logInBtn}>Log in</button>}
         </div>

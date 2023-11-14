@@ -6,7 +6,7 @@ import useFirebaseDataByFieldValue from '@/hooks/useFetchById';
 import styles from './ProductDetails.module.scss';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link'
+import { Link } from "@/components/Link";
 
 interface ProductDetailsProps {
     dictionary: {

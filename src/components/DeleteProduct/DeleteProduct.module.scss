@@ -1,0 +1,15 @@
+.cartBtn {
+    background-color: #F3EEEA;
+    border-radius: 8px;
+    border: 1px solid #776B5D;
+    color: #776B5D;
+    cursor: pointer;
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+    padding: 0 5px;
+
+    &:hover {
+        border: 3px solid #776B5D;
+    }
+}

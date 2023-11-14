@@ -9,7 +9,10 @@
       "list": {
         "title": "Product name:",
         "cat": "Category name: ",
-        "section": "Products"
+        "section": "Products",
+        "cart": "Log In to add to cart",
+        "add": "Add to cart",
+        "remove": "Remove from cart"
       },
       "sign": {
         "logIn": "Log In",
@@ -19,6 +22,17 @@
         "title": "Back",
         "product": "Product details"
 
+      }
+    },
+    "admin": {
+      "create": {
+        "title": "Add Product",
+        "name": "Name",
+        "category": "Category",
+        "price": "Price",
+        "info": "Discription",
+        "button": "Add",
+        "back": "Back"
       }
     }
   }

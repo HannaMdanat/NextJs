@@ -1,7 +1,6 @@
 import React from 'react'
 import ProductDetails from '@/components/ProductDetails/ProductDetails'
-import { getDictionary } from '../../../../../../get-dictionary'
-
+import { getDictionary } from '@/utils/get-dictionary';
 
 const Details = async  ({params}: {params: any}) => {
   const {slug} = params;
