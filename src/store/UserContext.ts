@@ -17,4 +17,4 @@ export const UserContext = createContext(userContextDefaultValues);
 
 const useUser = () => useContext(UserContext);
 
-export default useUser;
+export { useUser };

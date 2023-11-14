@@ -20,16 +20,25 @@ export interface CartData {
     }
 }
 
-export default function UserProvider({ children }: { children: ReactNode }) {
+export const UserContextProvider = ({ children }: { children: ReactNode }) => {
 	const [cartData, setCartData] = useState<CartData[]>([]);
 
 	const handleAddToCartData = (data: CartData) => {
-		setCartData([...cartData, data]);
-		localStorage.setItem('cart', JSON.stringify([...cartData, data]));
+		setCartData((prevState) => {
+            const newData = [...prevState, data];
+            localStorage.setItem('cart', JSON.stringify(newData));
+
+            return newData
+        });
 	};
 
 	const handleRemoveFromCartData = (id: string) => {
-		setCartData((prevState) => [...prevState.filter((item) => item.id !== id)]);
+		setCartData((prevState) => {
+            const newData = [...prevState.filter((item) => item.id !== id)];
+            localStorage.setItem('cart', JSON.stringify(newData));
+
+            return newData;
+        });
 	};
 
 	useEffect(() => {

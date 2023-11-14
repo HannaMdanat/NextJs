@@ -6,6 +6,7 @@ import '@/styles/index.scss'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import { AuthContextProvider } from '@/store/AuthProvider'
+import { UserContextProvider } from '@/store/UserProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +23,11 @@ export default function RootLayout({
     <html lang={lang}>
       <body className={inter.className}>
       <AuthContextProvider>
-        <Header />
-          {children}
-        <Footer />
+        <UserContextProvider>
+          <Header />
+            {children}
+          <Footer />
+        </UserContextProvider>
       </AuthContextProvider>
       </body>
     </html>

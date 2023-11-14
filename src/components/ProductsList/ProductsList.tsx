@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useEffect, useCallback } from 'react'
-import Image from 'next/image'
-import useFirebasePagination from '@/hooks/useFirebasePagination'
-import styles from './ProductsList.module.scss'
-import {usePathname} from 'next/navigation'
+import React, { useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import useFirebasePagination from '@/hooks/useFirebasePagination';
+import styles from './ProductsList.module.scss';
+import { usePathname } from 'next/navigation';
 import { Link } from "@/components/Link";
-import CardButtons from '@/components/CartButtons/CardButtons'
+import CardButtons from '@/components/CartButtons/CardButtons';
 
 interface ProductsListProps {
     dictionary: {
@@ -20,8 +20,8 @@ interface ProductsListProps {
 }
 
 const ProductsList = ({ dictionary }: ProductsListProps) => {
-    const pathname = usePathname()
-    const { data, loading, loadInitialData, loadNextPage } = useFirebasePagination('products', 5);
+  const pathname = usePathname();
+  const { data, loading, loadInitialData, loadNextPage } = useFirebasePagination('products', 5);
 
   useEffect(() => {
     loadInitialData();
@@ -50,7 +50,10 @@ const ProductsList = ({ dictionary }: ProductsListProps) => {
                     <p className={styles.productCategory}>{dictionary.cat} {category?.category?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
                     <p className={styles.productCategory}>{dictionary.title} {category?.name?.[pathname.includes('/en/') ? 'english' : 'arabic']}</p>
                 </Link>
-                <CardButtons dictionary={dictionary}/>
+                <CardButtons
+                  dictionary={dictionary}
+                  data={category}
+                />
             </div>
         ))}
     </div>
