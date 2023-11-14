@@ -11,10 +11,10 @@
     cursor: pointer;
     font-weight: 700;
     height: 40px;
-    width: 100px;
+    padding: 0 16px;
 
     &:hover {
-        border: 3px solid #776B5D;
+        outline: 2px solid #776B5D;
     }
 }
 

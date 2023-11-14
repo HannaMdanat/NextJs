@@ -5,11 +5,13 @@ interface userContextDefaultValues {
 	cartData: CartData[],
 	addToCartData: (data: CartData) => void,
 	removeFromCartData: (id: string) => void,
+	clearCartData: () => void
 };
 
 const userContextDefaultValues: userContextDefaultValues = {
 	cartData: [],
 	addToCartData: () => {},
+	clearCartData: () => {},
 	removeFromCartData: () => {},
 };
 

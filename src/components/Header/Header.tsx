@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { LangSwitcher } from '@/components/LangSwitcher'
 import { Link } from "@/components/Link";
 import { UserAuth } from '@/store/AuthContext'
-import Cart from '@/components/Cart/Cart'
+import { Cart } from '@/components/Cart'
 import { usePathname } from 'next/navigation'
 
 const Header = () => {

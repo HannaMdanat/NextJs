@@ -41,6 +41,11 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
         });
 	};
 
+  const clearCartData = () => {
+    setCartData([]);
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+
 	useEffect(() => {
 		const cartData = localStorage.getItem('cart');
 
@@ -51,6 +56,7 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
 
 	const value = {
 		cartData,
+    clearCartData,
 		addToCartData: (data: CartData) => handleAddToCartData(data),
 		removeFromCartData: (id: string) => handleRemoveFromCartData(id),
 	};
